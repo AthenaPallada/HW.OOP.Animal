@@ -1,7 +1,7 @@
 import java.util.Objects;
 
 public class Predator extends Mammal {
-    String food;
+    private String food;
 
     public Predator(String nickname, int amountYear, String habitat, int speedMovement, String food) {
         super(nickname, amountYear, habitat, speedMovement);

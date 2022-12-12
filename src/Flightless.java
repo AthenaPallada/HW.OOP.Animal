@@ -1,7 +1,7 @@
 import java.util.Objects;
 
 public class Flightless extends Bird {
-    String locomotion;
+    private String locomotion;
 
     public Flightless(String nickname, int amountYear, String habitat, String locomotion) {
         super(nickname, amountYear, habitat);

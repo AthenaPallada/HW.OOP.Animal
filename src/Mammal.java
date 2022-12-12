@@ -2,7 +2,7 @@ import java.util.Objects;
 
 public class Mammal extends Animal {
     private String habitat;
-    int speedMovement;
+    private int speedMovement;
 
     public Mammal(String nickname, int amountYear, String habitat, int speedMovement) {
         super(nickname, amountYear);

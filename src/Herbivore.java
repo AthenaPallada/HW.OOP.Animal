@@ -1,7 +1,7 @@
 import java.util.Objects;
 
 public class Herbivore extends Mammal {
-    String food;
+    private String food;
 
     public Herbivore(String nickname, int amountYear, String habitat, int speedMovement, String food) {
         super(nickname, amountYear, habitat, speedMovement);

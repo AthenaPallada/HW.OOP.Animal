@@ -1,7 +1,7 @@
 import java.util.Objects;
 
 public class Bird extends Animal {
-    String  habitat;
+    private String  habitat;
 
     public Bird(String nickname, int amountYear, String habitat) {
         super(nickname, amountYear);
