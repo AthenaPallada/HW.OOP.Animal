@@ -13,7 +13,7 @@ public class Amphibian extends Animal {
     }
 
     public void setHabitat(String habitat) {
-        if(habitat != null && !habitat.isEmpty()) {
+        if(StringUtils.isNullOrEmpty(habitat)) {
             this.habitat = habitat;
         }
     }
@@ -25,13 +25,8 @@ public class Amphibian extends Animal {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        if (!super.equals(o)) return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         Amphibian amphibian = (Amphibian) o;
         return Objects.equals(getHabitat(), amphibian.getHabitat()) && super.equals(o);
     }

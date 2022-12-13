@@ -13,7 +13,7 @@ public class Predator extends Mammal {
     }
 
     public void setFood(String food) {
-        if(food != null && !food.isEmpty()) {
+        if(StringUtils.isNullOrEmpty(food)) {
             this.food = food;
         }
     }
@@ -26,12 +26,8 @@ public class Predator extends Mammal {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Predator predator = (Predator) o;
         return Objects.equals(getFood(), predator.getFood()) && super.equals(o);

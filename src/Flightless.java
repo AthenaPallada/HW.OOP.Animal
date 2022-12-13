@@ -13,7 +13,7 @@ public class Flightless extends Bird {
     }
 
     public void setLocomotion(String locomotion) {
-        if(locomotion != null && !locomotion.isEmpty()) {
+        if(StringUtils.isNullOrEmpty(locomotion)) {
             this.locomotion = locomotion;
         }
     }
@@ -25,12 +25,8 @@ public class Flightless extends Bird {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Flightless flightless = (Flightless) o;
         return Objects.equals(getLocomotion(), flightless.getLocomotion()) && super.equals(o);

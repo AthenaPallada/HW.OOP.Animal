@@ -13,7 +13,7 @@ public class Herbivore extends Mammal {
     }
 
     public void setFood(String food) {
-        if(food != null && !food.isEmpty()) {
+        if(StringUtils.isNullOrEmpty(food)) {
             this.food = food;
         }
     }
@@ -25,13 +25,9 @@ public class Herbivore extends Mammal {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        if (!super.equals(o)) return false;
+        if(this == o) return true;
+        if(o == null || getClass() != o.getClass()) return false;
+        if(!super.equals(o)) return false;
         Herbivore herbivore = (Herbivore) o;
         return Objects.equals(getFood(), herbivore.getFood()) && super.equals(o);
     }

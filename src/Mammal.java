@@ -15,7 +15,7 @@ public class Mammal extends Animal {
     }
 
     public void setHabitat(String habitat) {
-        if(habitat != null && !habitat.isEmpty()) {
+        if(StringUtils.isNullOrEmpty(habitat)) {
             this.habitat = habitat;
         }
     }
@@ -25,9 +25,8 @@ public class Mammal extends Animal {
     }
 
     public void setSpeedMovement(int speedMovement) {
-        if(speedMovement > 0) {
+        if(speedMovement > 0)
             this.speedMovement = speedMovement;
-        }
     }
 
     @Override
@@ -37,12 +36,8 @@ public class Mammal extends Animal {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Mammal mammal = (Mammal) o;
         return speedMovement == mammal.speedMovement && Objects.equals(getHabitat(), mammal.getHabitat()) && super.equals(o);

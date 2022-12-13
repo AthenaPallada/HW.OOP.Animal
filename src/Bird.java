@@ -13,7 +13,7 @@ public class Bird extends Animal {
     }
 
     public void setHabitat(String habitat) {
-        if(habitat != null && !habitat.isEmpty()) {
+        if(StringUtils.isNullOrEmpty(habitat)) {
             this.habitat = habitat;
         }
     }
@@ -25,12 +25,8 @@ public class Bird extends Animal {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Bird bird = (Bird) o;
         return Objects.equals(getHabitat(), bird.getHabitat()) && super.equals(o);

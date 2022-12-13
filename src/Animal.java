@@ -14,7 +14,7 @@ public abstract class Animal {
     }
 
     public void setNickname(String nickname) {
-        if(nickname != null && !nickname.isEmpty()) {
+        if(StringUtils.isNullOrEmpty(nickname)) {
             this.nickname = nickname;
         }
     }
@@ -24,27 +24,18 @@ public abstract class Animal {
     }
 
     public void setAmountYear(int amountYear) {
-        if(amountYear > 0) {
+        if(amountYear > 0)
             this.amountYear = amountYear;
-        }
     }
 
-    public void eat() {
-    }
-    public void sleep() {
-    }
-    public void go() {
-    }
+    public void eat() {}
+    public void sleep() {}
+    public void go() {}
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        if (!super.equals(o)) return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         Animal animal = (Animal) o;
         return amountYear == animal.amountYear && Objects.equals(getNickname(), animal.getNickname());
     }
